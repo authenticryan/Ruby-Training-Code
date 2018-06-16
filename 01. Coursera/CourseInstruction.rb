@@ -170,5 +170,47 @@ end
 #   end
 # end
 
+# Unit Tests give's you the confidence to refactor your code with confidence
 # way to remember the twist involded in Unit Testing. each - expected first and then actual second
 
+# to test conditions that may raise errors, you have assert_raise
+# assert_raise ZeroDivisionError do
+#   @calc.divide(1,0)
+# end
+
+# RSpec - more english like test case's and outputs. Availabe only after rspec init is given
+# rspec --init
+
+# require 'rspec'
+# require_relative '../calculator'
+# 
+# describe Calculator do
+#   before { @calculator = Calculator.new('RSpec Calculator') }
+# 
+#   it "should add 2 numbers correctly" do
+#     expect(@calculator.add(2,4)).to eq 6
+#   end
+# 
+#   it "should subtract 2 numbers correctly" do
+#     expect(@calculator.subtract(4,2)).to eq 2
+#   end
+# end
+
+# rspec --format documentation      # outputs the conditions it checks for
+# More details on RSpec available at https://relishapp.com/rspec
+
+string_input = %q{all your crazy quote marks goes here. Do all you like}    # gets the strict treatement
+string_input = %Q{gets the libereal treatement}
+
+heres_documetn =  <<EOF
+all you pragraphs worth of content goes here
+EOF
+
+# The power of GSUB along with regular expressions. /i is to ignore case
+
+puts "This code will blank out all times 10:52 AM ".gsub!(/\d\d:\d\d (AM|PM)+/i,"**:** **")
+
+# ^ circumflex - matches the beginning of the string / beginning of each line
+# $ dollar     - matches the end of each line
+
+# /^Once upon a time.*and they lived happily ever after\.$/   matches a typicall fairy tail
